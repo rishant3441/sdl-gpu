@@ -182,6 +182,7 @@ if(BUILD_STATIC)
 		${SDL_gpu_HDRS}
 		${SDL_gpu_SRCS}
 	)
+	target_link_libraries(SDL_gpu ${GL_LIBRARIES})
     if(NOT CMAKE_VERSION VERSION_LESS "3.1")
         set_property(TARGET SDL_gpu PROPERTY C_STANDARD 99)
     endif()
