@@ -2126,7 +2126,7 @@ static GPU_bool SetWindowResolution(GPU_Renderer* renderer, Uint16 w, Uint16 h)
         ((GPU_CONTEXT_DATA*)context->data)->last_use_texturing = GPU_FALSE;
     }
 
-    // Clear target (no state change)
+    // clear target (no state change)
     glClearColor( 0.0f, 0.0f, 0.0f, 0.0f );
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 #endif
@@ -3354,7 +3354,7 @@ static GPU_Image* gpu_copy_image_pixels_only(GPU_Renderer* renderer, GPU_Image* 
             // It seemed to only work for the default framebuffer...
 
 			{
-				// Clear the color, blending, and filter mode
+				// clear the color, blending, and filter mode
 				SDL_Color color = image->color;
 				GPU_bool use_blending = image->use_blending;
 				GPU_FilterEnum filter_mode = image->filter_mode;
@@ -3737,7 +3737,7 @@ static GPU_bool ReplaceImage(GPU_Renderer* renderer, GPU_Image* image, SDL_Surfa
         return GPU_FALSE;
     }
 
-    // Allocate new texture
+    // allocate new texture
     data->handle = CreateUninitializedTexture(renderer);
     data->owns_handle = 1;
     if(data->handle == 0)
@@ -4157,7 +4157,7 @@ static void FreeTarget(GPU_Renderer* renderer, GPU_Target* target)
         FreeContext(target->context);
     }
     
-    // Clear references to this target
+    // clear references to this target
     if(target == renderer->current_context_target)
         renderer->current_context_target = NULL;
 
@@ -4165,7 +4165,7 @@ static void FreeTarget(GPU_Renderer* renderer, GPU_Target* target)
     if (renderer->current_context_target != NULL)
     {
         GPU_CONTEXT_DATA* cdata = ((GPU_CONTEXT_DATA*)renderer->current_context_target->context_target->context->data);
-        // Clear reference to image
+        // clear reference to image
         if (cdata->last_image == target->image)
             cdata->last_image = NULL;
 

@@ -1490,7 +1490,7 @@ DECLSPEC GPU_MatrixStack* SDLCALL GPU_CreateMatrixStack(void);
 /*! Frees the memory for the matrix stack and any matrices it contains. */
 DECLSPEC void SDLCALL GPU_FreeMatrixStack(GPU_MatrixStack* stack);
 
-/*! Allocate new matrices for the given stack. */
+/*! allocate new matrices for the given stack. */
 DECLSPEC void SDLCALL GPU_InitMatrixStack(GPU_MatrixStack* stack);
 
 /*! Copies matrices from one stack to another. */

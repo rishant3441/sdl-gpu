@@ -589,7 +589,7 @@ static int stbi_write_hdr_core(stbi__write_context *s, int x, int y, int comp, f
    if (y <= 0 || x <= 0 || data == NULL)
       return 0;
    else {
-      // Each component is stored separately. Allocate scratch space for full output scanline.
+      // Each component is stored separately. allocate scratch space for full output scanline.
       unsigned char *scratch = (unsigned char *) STBIW_MALLOC(x*4);
       int i, len;
       char buffer[128];
